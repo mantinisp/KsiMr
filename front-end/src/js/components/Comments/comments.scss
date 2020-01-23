@@ -1,0 +1,36 @@
+@import "../../../assets/css/base";
+
+.comments {
+  background: $design-color;
+  display: flex;
+  font-family: 'Teko', sans-serif;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 3em;
+  width: inherit;
+  @include respond-to(wide-screens) { height: 100% ;}
+  @include respond-to(medium-screens) { height: 100% ;}
+
+  .counter {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    top: 10px;
+    position: relative;
+  }
+
+  p {
+    color: #fff;
+    font-size: 0.4em;
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

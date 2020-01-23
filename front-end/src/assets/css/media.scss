@@ -1,0 +1,30 @@
+$desktop-size: 1281px;
+$laptops-min: 1025px;
+$laptops-max: 1280px;
+$tablets-min: 768px;
+$tablets-max: 1024px;
+$tablets-land-min: 768px;
+$tablets-land-max: 768px;
+$low-mobiles-min: 481px;
+$low-mobiles-max: 767px;
+$mobiles-min: 320px;
+$mobiles-max: 480px;
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  //CSS
+
+}
+$break-small: 320px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}

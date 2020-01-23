@@ -1,0 +1,13 @@
+.header {
+  margin: 30px;
+  z-index: 5;
+
+  .logo {
+    background-image: url("../../../assets/images/logo.png.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 180px;
+    height: 80px;
+  }
+}
