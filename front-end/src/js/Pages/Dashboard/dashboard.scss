@@ -36,11 +36,13 @@
   }
 
   .success-merge {
-    border-top: 4px solid $success-color;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,224,128,1) 0%, rgba(255,255,255,1) 26%);
     border-left: 4px solid $success-color;
   }
   .error-merge {
-    border-bottom: 4px solid $error-color;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(254,129,138,1) 0%, rgba(255,255,255,1) 26%);
     border-left: 4px solid $error-color;
   }
 }

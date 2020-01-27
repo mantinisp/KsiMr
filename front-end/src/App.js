@@ -5,6 +5,7 @@ import './js/lib/modern-canvas';
 import { Parallax, Background } from 'react-parallax';
 import Dashboard from "./js/Pages/Dashboard";
 import Header from "./js/Pages/Header";
+import Footer from "./js/Pages/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Header/>
             <Dashboard/>
         </Parallax>
+        <Footer/>
     </div>
   );
 }

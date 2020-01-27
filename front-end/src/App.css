@@ -33,17 +33,6 @@ a {
     transition: all .5s ease;
 }
 
-a:hover {
-    color: #ff69c9;
-    text-decoration: none;
-    transition: all .5s ease;
-}
-
-a:focus {
-    outline: none;
-    text-decoration: none;
-}
-
 img {
     max-width: 100%;
 }
@@ -138,32 +127,6 @@ section.small_pb {
 
 .list_none li {
     list-style: none;
-}
-
-input {
-    border: 0;
-    padding: 10px 20px;
-    width: 100%;
-}
-
-button {
-    background-image: -webkit-linear-gradient(left, #ff67cb 0%, #ffcc67 99%);
-    background-image: linear-gradient(to right, #ff67cb 0%, #ffcc67 99%);
-    border: 0;
-    border-radius: 40px;
-    color: #ffffff;
-    cursor: pointer;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    transition: all 0.5s ease 0s;
-}
-
-button:hover {
-    color: #fff;
-}
-
-button:focus {
-    outline: none;
 }
 
 .overflow_hide {
@@ -581,99 +544,6 @@ button:focus {
 .v_cyan_blue .spop {
     background-color: #0e082c;
 }
-
-/*END PRELOADER DESIGN*/
-
-/* THEME DEMO CSS*/
-.color-switch {
-    background: #212121;
-    right: -200px;
-    padding: 20px 0;
-    position: absolute;
-    top: 0;
-    transition: all .4s ease 0s;
-    width: 200px;
-    z-index: 9999999;
-}
-
-.color-switch p {
-    color: #ffffff;
-    margin: 0;
-    padding: 10px 15px 5px;
-}
-
-.color_box {
-    padding: 0px 15px;
-}
-
-.switch-active {
-    right: 0;
-}
-
-.demo ul {
-    position: fixed;
-    right: 0px;
-    top: 35%;
-    z-index: 9999;
-}
-
-.demo ul li {
-    position: relative;
-}
-
-.demo li a {
-    background: #212121;
-    color: #ffffff;
-    display: block;
-    font-size: 24px;
-    height: 40px;
-    line-height: 44px;
-    text-align: center;
-    width: 40px;
-    transition: all .4s ease 0s;
-}
-
-.demo li a.bg-green {
-    background-color: #73e080;
-}
-
-.demo li a.dm {
-    background-color: #F94551;
-}
-
-.demo .txt {
-    background-color: #018DF1;
-    font-size: 16px;
-}
-
-.demo li a i {
-    line-height: normal;
-    -webkit-animation: fa-spin 2s infinite linear;
-    animation: fa-spin 2s infinite linear;
-}
-
-.icon {
-    right: 0;
-    position: absolute;
-    top: 0;
-}
-
-.icon.switch-active {
-    right: 200px;
-}
-
-.menu_link {
-    left: 0;
-    position: fixed;
-    top: 30%;
-    z-index: 99;
-}
-
-.menu_link a {
-    color: #fff;
-    padding: 10px;
-}
-
 .color-switch button::after {
     color: #ffffff;
     content: "\f122";
