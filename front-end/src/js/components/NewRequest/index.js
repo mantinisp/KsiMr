@@ -4,14 +4,14 @@ import "./NewRequest.scss";
 
 const NewRequest = () => {
     const [show, setShow] = useState(false);
-    useEffect(() => {
-        if (!show) {
-            setInterval(() => setShow(true), 6000);
-        }
-        if (show) {
-            setInterval(() => setShow(false), 6000);
-        }
-    });
+    // useEffect(() => {
+    //     if (!show) {
+    //         setInterval(() => setShow(true), 6000);
+    //     }
+    //     if (show) {
+    //         setInterval(() => setShow(false), 6000);
+    //     }
+    // });
     return (
         <>
             <div className={"new-request-wrapper animated " + ((show) ? "fadeInNew" : "hide fadeOutNew")}>
