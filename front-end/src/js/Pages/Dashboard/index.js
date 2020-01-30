@@ -4,14 +4,10 @@ import "./dashboard.scss";
 import Comments from "../../components/Comments";
 import Rates from "../../components/Rates";
 import MergeButton from "../../components/MergeButton";
-import {getMergeRequests} from "../../../core/actions/mergeRequestsAction";
 import DashboardList from "./DashboardList";
 
 const Dashboard = () => {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getMergeRequests())
-    }, []);
+    const loader = useSelector(state => state.mergeRequests);
     return (
         <>
             <div className={"list-wrapper"}>

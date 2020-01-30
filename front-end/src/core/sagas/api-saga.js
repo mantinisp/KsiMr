@@ -16,6 +16,6 @@ function* workerSaga() {
 }
 
 function getMergeRequests() {
-    return axios.get("https://gitlab.nfq.lt/api/v4/projects?pagination=keyset&per_page=50&order_by=id&sort=desc")
+    return axios.get("https://gitlab.nfq.lt/api/v4/projects?pagination=keyset&per_page=10&order_by=id&sort=desc")
             .then((response) => response.data)
 }

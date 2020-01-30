@@ -13,7 +13,8 @@ export function mergeRequests(state = initialState, action) {
             };
         case DATA_LOAD:
             return Object.assign( {}, state, {
-                mergeRequests: state.mergeRequests.concat(action.payload), isLoading: false
+                mergeRequests: state.mergeRequests.concat(action.payload),
+                isLoading: false
             });
         default:
             return state;
