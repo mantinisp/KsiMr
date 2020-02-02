@@ -2,7 +2,7 @@
 
 .list-wrapper {
   position: relative;
-  margin: 30px;
+  margin: 50px;
   z-index: 5;
 
   .list-item {
@@ -46,6 +46,7 @@
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,224,128,1) 0%, rgba(255,255,255,1) 26%);
     border-left: 4px solid $success-color;
   }
+
   .error-merge {
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(254,129,138,1) 0%, rgba(255,255,255,1) 26%);

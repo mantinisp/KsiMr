@@ -11,23 +11,16 @@ import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 const DashboardList = () => {
     const dispatch = useDispatch();
     const mergeList = useSelector(state => state.mergeRequests);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        setTimeout(() => {
-            dispatch(getMergeRequests())
-            setLoading(false)
-        }, 3000);
+        // setTimeout(() => {
+        //     dispatch(getMergeRequests());
+        //     setLoading(false)
+        // }, 3000);
     }, []);
 
     const loadingAnimation = mergeList.isLoading;
-    const avatarChecker = (avatar_url) => {
-        if (!avatar_url) {
-            return "../../images/testavatar.png";
-        }
-
-        return avatar_url;
-    };
     console.log(mergeList.mergeRequests);
     return (
         <>
@@ -36,14 +29,14 @@ const DashboardList = () => {
             )}
             {mergeList.mergeRequests.map((element, index) => (
                 <div className={"col-lg-12"} key={index}>
-                    <div className={"list-item success-merge"}>
+                    <div className={"list-item"}>
                         <div className={"col-lg-1 p-0"}>
                             <img className={"gravatar pull-left"}
                                  src={ (!element.namespace.avatar_url)
                                  ? "../../images/testavatar.png"
                                  : element.namespace.avatar_url }/>
                         </div>
-                        <div className={"col col-xs-11 col-lg-7"}>
+                        <div className={"col col-xs-11 col-lg-8"}>
                             <div className={"username"}>
                                 { element.namespace.name }
                                 <span className={"created-date float-right"}>2020-01-02 21:00:00</span>

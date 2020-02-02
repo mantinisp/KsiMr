@@ -1,5 +1,8 @@
+@import "../../../assets/css/base";
+
 .header {
-  margin: 0 30px 0 30px;
+  margin: 0 50px 0 50px;
+  position: relative;
   z-index: 5;
 
   .logo {
@@ -9,5 +12,22 @@
     background-size: cover;
     width: 180px;
     height: 80px;
+    float: left;
+  }
+
+  .menu {
+    float: right;
+
+    .button {
+      border-radius: 0;
+      border: 0;
+      padding: 10px;
+      background-color: $design-color;
+
+      &:hover {
+        border: 0;
+        opacity: 0.9;
+      }
+    }
   }
 }

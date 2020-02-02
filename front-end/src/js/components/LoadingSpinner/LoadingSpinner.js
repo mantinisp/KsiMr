@@ -2,13 +2,13 @@ import React, {useState, useEffect} from "react";
 import FadeIn from "react-fade-in";
 import Lottie from "react-lottie";
 import ReactLoading from "react-loading";
-import * as pandaData from "./pandaloader.json";
+import * as legoData from "./legoloader.json";
 
 const LoadingSpinner = () => {
     const defaultOptions = {
         loop: true,
         autoplay: true,
-        animationData: pandaData.default,
+        animationData: legoData.default,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice"
         }

@@ -1,0 +1,36 @@
+.settings-wrapper {
+  background-color: #0a257c;
+  margin: 0 auto;
+  padding: 15px;
+
+  h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+
+  .left-side {
+    background-color: #0a257c;
+    z-index: 100;
+  }
+
+  .projects-list {
+    color: #fff;
+
+    ul li {
+      background-color: rgba(255, 255, 255, 0.2);
+      text-transform: uppercase;
+    }
+  }
+
+  .pages-button {
+    margin: 0 auto;
+    text-align: center;
+
+    .button {
+      border-radius: 0;
+    }
+  }
+}
