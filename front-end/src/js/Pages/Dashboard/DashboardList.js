@@ -7,51 +7,53 @@ import Rates from "../../components/Rates";
 import {getMergeRequests} from "../../../core/actions/mergeRequestsAction";
 import store from "../../../core/store";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 const DashboardList = () => {
     const dispatch = useDispatch();
     const mergeList = useSelector(state => state.mergeRequests);
-    const [loading, setLoading] = useState(false);
-
+    const mergeList2 = useSelector(state => state.myProjects);
+    const activeProjects = store.getState().myProjects;
+    const eff = store.getState().myProjects.pickedProjects.length;
     useEffect(() => {
-        // setTimeout(() => {
-        //     dispatch(getMergeRequests());
-        //     setLoading(false)
-        // }, 3000);
+        let storeCount = store.getState().myProjects.pickedProjects.length;
+        let previousCount = store.getState().projectList.projectCount;
+        console.log(storeCount, previousCount);
+        if (mergeList.newList.length <= 0) {
+            dispatch(getMergeRequests());
+        }
     }, []);
-
     const loadingAnimation = mergeList.isLoading;
-    console.log(mergeList.mergeRequests);
     return (
         <>
-            {loading && (
+            {mergeList.isLoading && (
                 <LoadingSpinner/>
             )}
-            {mergeList.mergeRequests.map((element, index) => (
+            {mergeList.newList.map((element, index) => (
                 <div className={"col-lg-12"} key={index}>
-                    <div className={"list-item"}>
+                    <div className={"list-item " + (element.user_notes_count >= 5 ? "error-merge" : "")}>
                         <div className={"col-lg-1 p-0"}>
                             <img className={"gravatar pull-left"}
-                                 src={ (!element.namespace.avatar_url)
-                                 ? "../../images/testavatar.png"
-                                 : element.namespace.avatar_url }/>
+                                 src={(!element.author.avatar_url)
+                                     ? "../../images/testavatar.png"
+                                     : element.author.avatar_url}/>
                         </div>
                         <div className={"col col-xs-11 col-lg-8"}>
                             <div className={"username"}>
-                                { element.namespace.name }
-                                <span className={"created-date float-right"}>2020-01-02 21:00:00</span>
+                                <a href={element.author.web_url}>{element.author.name}</a>
+                                <span className={"created-date float-right"}>
+                                    <Moment fromNow ago>{element.updated_at}</Moment>
+                                </span>
                             </div>
                             <div className={"commit-message"}>
-                                MEM-0000: Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry.
-                                MEM-0000: Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry.
+                                <a href={element.web_url}>{element.title}</a>
                             </div>
                         </div>
                         <div className={"col col-xs-12 p-0"}>
                             <div className={"counter-wrapper"}>
-                                <Comments/>
-                                <Rates/>
+                                <Comments notes={element.user_notes_count}/>
+                                <Rates upvote={element.upvotes} downvote={element.downvotes}/>
                             </div>
                         </div>
                     </div>
@@ -61,4 +63,4 @@ const DashboardList = () => {
     )
 };
 
-export default DashboardList;
+export default connect()(DashboardList);
