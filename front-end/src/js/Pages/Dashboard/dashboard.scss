@@ -17,7 +17,7 @@
     }
 
     .username {
-      color: $design-color;
+      color: #111;
       font-size: 1.3em;
       margin-top: 10px;
       font-weight: 700;
@@ -54,20 +54,62 @@
     .counter-wrapper {
       display: flex;
       width: 100%;
-      @include respond-to(wide-screens) { height: 100% ;}
-      @include respond-to(medium-screens) { height: 100% ;}
+      @include respond-to(wide-screens) {
+        height: 100%;
+      }
+      @include respond-to(medium-screens) {
+        height: 100%;
+      }
     }
   }
 
   .success-merge {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,224,128,1) 0%, rgba(255,255,255,1) 26%);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(115, 224, 128, 1) 0%, rgba(255, 255, 255, 1) 26%);
     border-left: 4px solid $success-color;
   }
 
-  .error-merge {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(254,129,138,1) 0%, rgba(255,255,255,1) 26%);
+  .error-merge-1 {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(254, 129, 138, 1) 0%, rgba(255, 255, 255, 1) 26%);
     border-left: 4px solid $error-color;
+
+    .username {
+      a {
+        color: #fff;
+
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .error-merge-2 {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(270deg, rgba(255, 255, 255, 1) 50%, rgba(255, 134, 142, 1) 100%);
+    border-left: 4px solid $error-color;
+  }
+
+  .error-merge-3 {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(270deg, rgba(255, 255, 255, 1) 37%, rgba(255, 134, 142, 1) 100%);
+    border-left: 4px solid $error-color;
+  }
+
+  .error-merge-4 {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(270deg, rgba(255, 255, 255, 1) 26%, rgba(255, 134, 142, 1) 100%);
+    border-left: 4px solid $error-color;
+
+    .username {
+      a {
+        color: #fff;
+
+        &:hover {
+          color: #000;
+        }
+      }
+    }
   }
 }

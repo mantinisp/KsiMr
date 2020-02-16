@@ -4,7 +4,7 @@ import "./settings.scss";
 import {addProjectNumber, getProjectList, selectProject} from "../../../core/actions/projectListAction";
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 import store from "../../../core/store";
-import {getMergeRequests} from "../../../core/actions/mergeRequestsAction";
+import {getMergeRequests, refreshMergesList} from "../../../core/actions/mergeRequestsAction";
 
 const ProjectList = () => {
     const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const ProjectList = () => {
             return false;
         }
         dispatch(selectProject(element));
-        dispatch(getMergeRequests());
+        dispatch(refreshMergesList());
     };
 
     const checkProject = (element, pro) => {
@@ -46,7 +46,7 @@ const ProjectList = () => {
                                 {element.id}
                             </span>
                                 <span className={"project-title"}>
-                                <b>{element.name}: </b>{element.namespace.path} - {index}
+                                <b>{element.namespace.path}: </b>{element.name}
                             </span>
                             </li>
                         ))}

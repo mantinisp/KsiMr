@@ -1,4 +1,10 @@
-import {DATA_LOAD_MERGES, DATA_REQUEST_MERGES} from "../../constants/action-types";
+import {
+    DATA_LOAD_MERGES,
+    DATA_REQUEST_MERGES,
+    NEW_MERGE_LIST,
+    GENERATE_LIST,
+    REFRESH_MERGES_LIST
+} from "../../constants/action-types";
 
 const initialState = {
     mergeRequests: [],
@@ -18,11 +24,21 @@ export function mergeRequests(state = initialState, action) {
                 newList: [],
                 isLoading: false
             });
-        case "NEW_MERGE_LIST":
+        case NEW_MERGE_LIST:
             return Object.assign({}, state, {
                 ...state,
                 newList: state.newList.concat(action.payload)
             });
+        case REFRESH_MERGES_LIST:
+            return {
+                ...state,
+                mergeRequests: []
+            };
+        case GENERATE_LIST:
+            return {
+                ...state,
+                mergeRequests: state.newList
+            };
         default:
             return state;
     }

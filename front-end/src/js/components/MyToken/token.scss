@@ -1,0 +1,32 @@
+@import "../../../assets/css/base";
+
+.token-wrapper {
+  float: left;
+  margin-right: 4px;
+  display: flex;
+
+  .button {
+    border-radius: 0;
+    border: 0;
+    background-color: $design-color;
+    height: 55px;
+    color: #fff;
+    font-size: 20px;
+
+    &:hover {
+      border: 0;
+      opacity: 0.9;
+      color: #fff;
+    }
+  }
+
+  .opened-token {
+    display: flex;
+  }
+
+  .token-input {
+    border-radius: 0;
+    padding: 10px;
+    height: 55px;
+  }
+}

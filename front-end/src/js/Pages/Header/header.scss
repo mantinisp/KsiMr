@@ -21,8 +21,10 @@
     .button {
       border-radius: 0;
       border: 0;
-      padding: 10px;
       background-color: $design-color;
+      height: 55px;
+      line-height: 45px;
+      font-size: 20px;
 
       &:hover {
         border: 0;
